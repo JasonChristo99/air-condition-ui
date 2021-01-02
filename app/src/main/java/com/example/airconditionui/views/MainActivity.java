@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void moreOptionsPressed() {
-        // TODO
+        // TODO navigate to recycler view of options
     }
 
     private void powerOffPressed() {

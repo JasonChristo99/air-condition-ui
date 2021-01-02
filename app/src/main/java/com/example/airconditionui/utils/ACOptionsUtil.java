@@ -91,7 +91,6 @@ public class ACOptionsUtil {
                 return String.valueOf(acOptions.getSwingScale());
             case FUNCTIONALITY_MODE:
                 return String.valueOf(acOptions.getFunctionalityMode());
-            // TODO add the remaining cases here
             default:
                 return null;
         }

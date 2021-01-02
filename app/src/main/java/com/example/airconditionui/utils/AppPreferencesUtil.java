@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 public class AppPreferencesUtil {
     private static AppPreferencesUtil instance;
     private SharedPreferences sharedPreferences;
-    private static final String APP_PREFERENCES_KEY = "APP_PREFERENCES";
+    private static final String APP_PREFERENCES_KEY = "APP_PREFERENCES_OBJ";
 
     private AppPreferencesUtil(Context context) {
         sharedPreferences = context.getSharedPreferences("app_preferences_db", Context.MODE_PRIVATE);
@@ -25,8 +25,8 @@ public class AppPreferencesUtil {
         Gson gson = new Gson();
 
         if (getAppPreferences() == null) {
-            editor.putString(APP_PREFERENCES_KEY, gson.toJson(new AppPreferences()));
-            editor.commit();
+            editor.putString(APP_PREFERENCES_KEY, gson.toJson(AppPreferences.getDefault()));
+            editor.apply();
         }
     }
 
@@ -60,8 +60,35 @@ public class AppPreferencesUtil {
         }
     }
 
-    public void setAppPreferenceByKey() {
-        // TODO
+    // Getters
+    public int getFontSize() {
+        return getAppPreferences().getFontSize();
+    }
+
+    public boolean isVoiceCommands() {
+        return getAppPreferences().isVoiceCommands();
+    }
+
+    // Setters
+
+    public void setFontSize(int value) {
+        AppPreferences appPreferences = getAppPreferences();
+        appPreferences.setFontSize(value);
+        Gson gson = new Gson();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(APP_PREFERENCES_KEY);
+        editor.putString(APP_PREFERENCES_KEY, gson.toJson(appPreferences));
+        editor.apply();
+    }
+
+    public void setVoiceCommands(boolean value) {
+        AppPreferences appPreferences = getAppPreferences();
+        appPreferences.setVoiceCommands(value);
+        Gson gson = new Gson();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(APP_PREFERENCES_KEY);
+        editor.putString(APP_PREFERENCES_KEY, gson.toJson(appPreferences));
+        editor.apply();
     }
 
 }

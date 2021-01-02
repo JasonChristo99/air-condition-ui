@@ -2,7 +2,6 @@ package com.example.airconditionui.models;
 
 /* Air condition Options model class */
 
-// TODO definitely add more options here
 public class ACOptions {
     private SpeedLevel fanSpeed;
     private OnOff ecoMode, power, timer, turboMode, swingAuto, sleepMode;

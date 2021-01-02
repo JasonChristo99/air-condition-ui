@@ -13,9 +13,13 @@ public class AppPreferences {
     }
 
     // init all preferences with default values
-    public AppPreferences() {
+    private AppPreferences() {
         this.fontSize = 20;
         this.voiceCommands = false;
+    }
+
+    public static AppPreferences getDefault() {
+        return new AppPreferences();
     }
 
     public int getFontSize() {
@@ -33,6 +37,4 @@ public class AppPreferences {
     public void setVoiceCommands(boolean voiceCommands) {
         this.voiceCommands = voiceCommands;
     }
-
-    // TODO add the remaining getters and setters
 }
