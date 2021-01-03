@@ -2,6 +2,7 @@ package com.example.airconditionui.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -62,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void moreOptionsPressed() {
-        // TODO navigate to recycler view of options
+        Intent intent = new Intent(this, OptionsActivity.class);
+        startActivity(intent);
     }
 
     private void powerOffPressed() {
