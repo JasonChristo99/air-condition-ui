@@ -10,49 +10,56 @@
         android:id="@+id/temperatureText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="128dp"
         android:text="\? Βαθμοί"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/powerOffBtn"
+        style="@style/ShapeAppearance.MaterialComponents.LargeComponent"
+        android:layout_width="224dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="380dp"
+        android:backgroundTint="@color/colorOff"
+        android:text="ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
+
+    <Button
+        android:id="@+id/moreOptionsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="ΠΕΡΙΣΣΟΤΕΡΕΣ ΛΕΙΤΟΥΡΓΙΕΣ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/powerOffBtn" />
+
+    <Button
+        android:id="@+id/increaseTempBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="72dp"
+        android:text="UP"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/decreaseTempBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="252dp"
         android:text="DOWN"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/increaseTempBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="88dp"
-        android:text="UP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/powerOffBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="428dp"
-        android:text="ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/moreOptionsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="ΠΕΡΙΣΣΟΤΕΡΕΣ ΛΕΙΤΟΥΡΓΙΕΣ"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/powerOffBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

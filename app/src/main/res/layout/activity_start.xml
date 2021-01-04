@@ -8,10 +8,13 @@
 
     <Button
         android:id="@+id/powerOnBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ShapeAppearance.MaterialComponents.LargeComponent"
+        android:layout_width="196dp"
+        android:layout_height="91dp"
         android:layout_marginTop="304dp"
+        android:backgroundTint="@color/colorOn"
         android:text="ΕΝΕΡΓΟΠΟΙΗΣΗ"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
         android:text="Καλώς ορίσατε!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
