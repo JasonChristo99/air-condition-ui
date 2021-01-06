@@ -11,20 +11,20 @@
         style="@style/ShapeAppearance.MaterialComponents.LargeComponent"
         android:layout_width="196dp"
         android:layout_height="91dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginTop="64dp"
         android:backgroundTint="@color/colorOn"
         android:text="ΕΝΕΡΓΟΠΟΙΗΣΗ"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/startACImage" />
 
     <Button
         android:id="@+id/exitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="92dp"
         android:text="ΕΞΟΔΟΣ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -42,4 +42,14 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/startACImage"
+        android:layout_width="198dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+        app:srcCompat="@drawable/ac" />
 </androidx.constraintlayout.widget.ConstraintLayout>
