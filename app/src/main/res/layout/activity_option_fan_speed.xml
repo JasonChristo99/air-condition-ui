@@ -6,4 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".views.options.OptionFanSpeedActivity">
 
+    <TextView
+        android:id="@+id/temperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="ΤΑΧΥΤΗΤΑ ΑΝΕΜΙΣΤΗΡΑ"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/chooseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:hapticFeedbackEnabled="false"
+        android:text="Επιλέξτε"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
+        android:textSize="33sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureText" />
+
+    <Button
+        android:id="@+id/lowBtn"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="ΧΑΜΗΛΗ"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseText"
+        app:strokeWidth="3dp" />
+
+
+    <Button
+        android:id="@+id/midBtn"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="ΜΕΤΡΙΑ"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lowBtn"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/highBtn"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="ΥΨΗΛΗ"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/midBtn"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/optBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="ΠΙΣΩ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

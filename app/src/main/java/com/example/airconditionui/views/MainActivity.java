@@ -12,6 +12,8 @@ import com.example.airconditionui.R;
 import com.example.airconditionui.models.OnOff;
 import com.example.airconditionui.utils.ACOptionsUtil;
 
+import java.text.DateFormat;
+
 /* This is the main activity of the AC UI application
  * from where we can increase/lower the temperature etc. */
 
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView temperatureText;
     Button increaseTempBtn, decreaseTempBtn, powerOffBtn, moreOptionsBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +76,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void decreaseTempPressed() {
-        ACOptionsUtil.getInstance(this).setTemperature(ACOptionsUtil.getInstance(this).getTemperature() - 1);
-        updateTemperatureText();
+        if(ACOptionsUtil.getInstance(this).getTemperature()>18) {
+            ACOptionsUtil.getInstance(this).setTemperature(ACOptionsUtil.getInstance(this).getTemperature() - 1);
+            updateTemperatureText();
+        }
     }
 
     private void increaseTempPressed() {
-        ACOptionsUtil.getInstance(this).setTemperature(ACOptionsUtil.getInstance(this).getTemperature() + 1);
-        updateTemperatureText();
+        if (ACOptionsUtil.getInstance(this).getTemperature()<30) {
+            ACOptionsUtil.getInstance(this).setTemperature(ACOptionsUtil.getInstance(this).getTemperature() + 1);
+            updateTemperatureText();
+        }
     }
 
     private void updateTemperatureText() {

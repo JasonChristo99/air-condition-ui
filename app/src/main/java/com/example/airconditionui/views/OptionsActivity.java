@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.airconditionui.views.options.OptionEcoModeActivity;
+import com.example.airconditionui.views.options.OptionTimerActivity;
 import com.example.airconditionui.R;
 import com.example.airconditionui.views.options.OptionFanSpeedActivity;
 import com.example.airconditionui.views.options.OptionSleepModeActivity;
@@ -64,10 +66,14 @@ public class OptionsActivity extends AppCompatActivity implements OptionsRecycle
                 intent = new Intent(this, OptionFanSpeedActivity.class);
                 break;
             case 1:
-                // TODO remaining cases
+                intent = new Intent (this, OptionTimerActivity.class);
+                break;
             case 2:
                 intent = new Intent(this, OptionSleepModeActivity.class);
-
+                break;
+            case 3:
+                intent = new Intent(this, OptionEcoModeActivity.class);
+                break;
         }
         if (intent != null)
             startActivity(intent);
