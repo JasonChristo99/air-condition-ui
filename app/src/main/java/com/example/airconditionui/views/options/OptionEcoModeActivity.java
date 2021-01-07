@@ -14,12 +14,13 @@ import com.example.airconditionui.utils.ACOptionsUtil;
 
 public class OptionEcoModeActivity extends AppCompatActivity {
     Button onBtn, offBtn, backBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_eco_mode);
-        onBtn=findViewById(R.id.onBtn);
-        offBtn=findViewById(R.id.offBtn);
+        onBtn = findViewById(R.id.onBtn);
+        offBtn = findViewById(R.id.offBtn);
         backBtn = findViewById(R.id.optBackButton);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,18 +46,19 @@ public class OptionEcoModeActivity extends AppCompatActivity {
 
     }
 
-    public void setEcoModeOnPressed(){
+    public void setEcoModeOnPressed() {
         ACOptionsUtil.getInstance(this).setEcoMode(OnOff.ON);
     }
-    public void setEcoModeOffPressed(){
+
+    public void setEcoModeOffPressed() {
         ACOptionsUtil.getInstance(this).setEcoMode(OnOff.OFF);
     }
 
-    public void updateButtons(){
-        if(ACOptionsUtil.getInstance(this).getEcoMode()==OnOff.ON){
+    public void updateButtons() {
+        if (ACOptionsUtil.getInstance(this).getEcoMode() == OnOff.ON) {
             onBtn.setBackgroundColor(0xFF03A9F4);
             offBtn.setBackgroundColor(0xFFFFFFFF);
-        }else{
+        } else {
             onBtn.setBackgroundColor(0xFFFFFFFF);
             offBtn.setBackgroundColor(0xFF03A9F4);
         }

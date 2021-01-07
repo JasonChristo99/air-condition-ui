@@ -24,13 +24,13 @@ public class OptionTimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_timer);
         setTimerText = findViewById(R.id.setTimerText);
-        picker=findViewById(R.id.timePicker);
+        picker = findViewById(R.id.timePicker);
         picker.setIs24HourView(true);
-        OKBtn=findViewById(R.id.OKBtn);
+        OKBtn = findViewById(R.id.OKBtn);
         backBtn = findViewById(R.id.optBackButton);
-        if(ACOptionsUtil.getInstance(this).getTimer().equals(OnOff.ON)){
-            hour = ACOptionsUtil.getInstance(this).getTimerMin()/60;
-            minute = ACOptionsUtil.getInstance(this).getTimerMin()%60;
+        if (ACOptionsUtil.getInstance(this).getTimer().equals(OnOff.ON)) {
+            hour = ACOptionsUtil.getInstance(this).getTimerMin() / 60;
+            minute = ACOptionsUtil.getInstance(this).getTimerMin() % 60;
             updateTimerText();
         }
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -45,49 +45,47 @@ public class OptionTimerActivity extends AppCompatActivity {
                 hour = picker.getHour();
                 minute = picker.getMinute();
                 updateTimerText();
-                int totalminutes = hour*60 + minute;
+                int totalminutes = hour * 60 + minute;
                 setTimerMinutes(totalminutes);
             }
         });
 
 
-
-
     }
 
-    private void updateTimerText(){
-        if (hour+minute==0){
+    private void updateTimerText() {
+        if (hour + minute == 0) {
             setTimerText.setText("ΟΡΙΣΤΕ ΧΡΟΝΟΔΙΑΚΟΠΤΗ ΥΠΝΟΥ");
-        }else if(hour==0){
-            if(minute==1){
-                setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ "+ minute +" ΛΕΠΤΟ");
-            }else{
-                setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ "+ minute +" ΛΕΠΤΑ");
+        } else if (hour == 0) {
+            if (minute == 1) {
+                setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + minute + " ΛΕΠΤΟ");
+            } else {
+                setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + minute + " ΛΕΠΤΑ");
             }
-        }else if(hour==1){
-            if(minute==0){
+        } else if (hour == 1) {
+            if (minute == 0) {
                 setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + hour + " ΩΡΑ");
-            }else if(minute==1){
+            } else if (minute == 1) {
                 setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + hour + " ΩΡΑ ΚΑΙ " + minute + " ΛΕΠΤΟ");
-            }else{
+            } else {
                 setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + hour + " ΩΡΑ ΚΑΙ " + minute + " ΛΕΠΤΑ");
             }
-        }else {
-            if(minute==0){
+        } else {
+            if (minute == 0) {
                 setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + hour + " ΩΡΕΣ");
-            }else if(minute==1){
+            } else if (minute == 1) {
                 setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + hour + " ΩΡΕΣ ΚΑΙ " + minute + " ΛΕΠΤΟ");
-            }else{
+            } else {
                 setTimerText.setText("ΤΟ ΚΛΙΜΑΤΙΣΤΙΚΟ ΘΑ ΚΛΕΙΣΕΙ ΣΕ " + hour + " ΩΡΕΣ ΚΑΙ " + minute + " ΛΕΠΤΑ");
             }
         }
     }
 
-    private void setTimerMinutes(int totalminutes){
+    private void setTimerMinutes(int totalminutes) {
         ACOptionsUtil.getInstance(this).setTimerMin(totalminutes);
-        if (totalminutes==0){
+        if (totalminutes == 0) {
             ACOptionsUtil.getInstance(this).setTimer(OnOff.OFF);
-        }else{
+        } else {
             ACOptionsUtil.getInstance(this).setTimer(OnOff.ON);
         }
 

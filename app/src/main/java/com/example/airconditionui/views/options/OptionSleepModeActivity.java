@@ -14,12 +14,13 @@ import com.example.airconditionui.utils.ACOptionsUtil;
 
 public class OptionSleepModeActivity extends AppCompatActivity {
     Button onBtn, offBtn, backBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_sleep_mode);
-        onBtn=findViewById(R.id.onBtn);
-        offBtn=findViewById(R.id.offBtn);
+        onBtn = findViewById(R.id.onBtn);
+        offBtn = findViewById(R.id.offBtn);
         backBtn = findViewById(R.id.optBackButton);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,18 +47,19 @@ public class OptionSleepModeActivity extends AppCompatActivity {
 
     }
 
-    public void setEcoModeOnPressed(){
+    public void setEcoModeOnPressed() {
         ACOptionsUtil.getInstance(this).setSleepMode(OnOff.ON);
     }
-    public void setEcoModeOffPressed(){
+
+    public void setEcoModeOffPressed() {
         ACOptionsUtil.getInstance(this).setSleepMode(OnOff.OFF);
     }
 
-    public void updateButtons(){
-        if(ACOptionsUtil.getInstance(this).getSleepMode()==OnOff.ON){
+    public void updateButtons() {
+        if (ACOptionsUtil.getInstance(this).getSleepMode() == OnOff.ON) {
             onBtn.setBackgroundColor(0xFF03A9F4);
             offBtn.setBackgroundColor(0xFFFFFFFF);
-        }else{
+        } else {
             onBtn.setBackgroundColor(0xFFFFFFFF);
             offBtn.setBackgroundColor(0xFF03A9F4);
         }

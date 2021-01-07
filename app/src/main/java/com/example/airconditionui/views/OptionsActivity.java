@@ -66,7 +66,7 @@ public class OptionsActivity extends AppCompatActivity implements OptionsRecycle
                 intent = new Intent(this, OptionFanSpeedActivity.class);
                 break;
             case 1:
-                intent = new Intent (this, OptionTimerActivity.class);
+                intent = new Intent(this, OptionTimerActivity.class);
                 break;
             case 2:
                 intent = new Intent(this, OptionSleepModeActivity.class);
