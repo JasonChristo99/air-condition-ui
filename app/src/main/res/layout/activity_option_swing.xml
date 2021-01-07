@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.options.OptionSwingActivity">
+
+    <TextView
+        android:id="@+id/SwingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="ΘΕΣΗ ΠΕΡΣΙΔΩΝ"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Btn1"
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SwingText"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/Btn2"
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="2"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SwingText"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/Btn3"
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="3"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btn1"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/Btn4"
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="4"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btn2"
+        app:strokeWidth="3dp" />
+
+
+    <Button
+        android:id="@+id/Btn5"
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="5"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btn3"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/autoBtn"
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center"
+        android:text="AYTOMATΗ ΠΕΡΙΣΤΡΟΦΗ"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btn4"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/optBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="ΠΙΣΩ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

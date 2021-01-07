@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".views.options.OptionSwingActivity"></activity>
+        <activity android:name=".views.options.OptionTurboMode" />
+        <activity android:name=".views.options.OptionModeActivity" />
         <activity android:name=".views.options.OptionTimerActivity" />
         <activity android:name=".views.OptionsActivity" />
         <activity android:name=".views.AppPreferencesActivity" />

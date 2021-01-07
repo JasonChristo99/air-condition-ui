@@ -10,14 +10,14 @@ import com.example.airconditionui.R;
 import com.example.airconditionui.models.OnOff;
 import com.example.airconditionui.utils.ACOptionsUtil;
 
-/* This activity presents options for the sleep-mode functionality */
+public class OptionTurboMode extends AppCompatActivity {
 
-public class OptionEcoModeActivity extends AppCompatActivity {
     Button onBtn, offBtn, backBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_option_eco_mode);
+        setContentView(R.layout.activity_option_turbo_mode);
         onBtn=findViewById(R.id.onBtn);
         offBtn=findViewById(R.id.offBtn);
         backBtn = findViewById(R.id.optBackButton);
@@ -31,29 +31,28 @@ public class OptionEcoModeActivity extends AppCompatActivity {
         onBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setEcoModeOnPressed();
+                setTurboModeOnPressed();
                 updateButtons();
             }
         });
         offBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setEcoModeOffPressed();
+                setTurboModeOffPressed();
                 updateButtons();
             }
         });
-
     }
 
-    public void setEcoModeOnPressed(){
-        ACOptionsUtil.getInstance(this).setEcoMode(OnOff.ON);
+    public void setTurboModeOnPressed(){
+        ACOptionsUtil.getInstance(this).setTurboMode(OnOff.ON);
     }
-    public void setEcoModeOffPressed(){
-        ACOptionsUtil.getInstance(this).setEcoMode(OnOff.OFF);
+    public void setTurboModeOffPressed(){
+        ACOptionsUtil.getInstance(this).setTurboMode(OnOff.OFF);
     }
 
     public void updateButtons(){
-        if(ACOptionsUtil.getInstance(this).getEcoMode() == OnOff.ON){
+        if(ACOptionsUtil.getInstance(this).getTurboMode()==OnOff.ON){
             onBtn.setBackgroundColor(0xFF03A9F4);
             offBtn.setBackgroundColor(0xFFFFFFFF);
 

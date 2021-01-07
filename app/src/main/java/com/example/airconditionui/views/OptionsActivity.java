@@ -10,10 +10,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.airconditionui.views.options.OptionEcoModeActivity;
+import com.example.airconditionui.views.options.OptionModeActivity;
+import com.example.airconditionui.views.options.OptionSwingActivity;
 import com.example.airconditionui.views.options.OptionTimerActivity;
 import com.example.airconditionui.R;
 import com.example.airconditionui.views.options.OptionFanSpeedActivity;
 import com.example.airconditionui.views.options.OptionSleepModeActivity;
+import com.example.airconditionui.views.options.OptionTurboMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +76,15 @@ public class OptionsActivity extends AppCompatActivity implements OptionsRecycle
                 break;
             case 3:
                 intent = new Intent(this, OptionEcoModeActivity.class);
+                break;
+            case 4:
+                intent = new Intent(this, OptionModeActivity.class);
+                break;
+            case 5:
+                intent = new Intent(this, OptionTurboMode.class);
+                break;
+            case 6:
+                intent = new Intent(this, OptionSwingActivity.class);
                 break;
         }
         if (intent != null)
