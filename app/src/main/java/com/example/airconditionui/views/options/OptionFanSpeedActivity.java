@@ -62,14 +62,26 @@ public class OptionFanSpeedActivity extends AppCompatActivity {
             lowBtn.setBackgroundColor(0xFF03A9F4);
             midBtn.setBackgroundColor(0xFFFFFFFF);
             highBtn.setBackgroundColor(0xFFFFFFFF);
+
+            lowBtn.setTextColor(0xFFFFFFFF);
+            midBtn.setTextColor(0xFF000000);
+            highBtn.setTextColor(0xFF000000);
         }else if (ACOptionsUtil.getInstance(this).getFanSpeed() == SpeedLevel.MEDIUM){
             lowBtn.setBackgroundColor(0xFFFFFFFF);
             midBtn.setBackgroundColor(0xFF03A9F4);
             highBtn.setBackgroundColor(0xFFFFFFFF);
+
+            lowBtn.setTextColor(0xFF000000);
+            midBtn.setTextColor(0xFFFFFFFF);
+            highBtn.setTextColor(0xFF000000);
         }else if(ACOptionsUtil.getInstance(this).getFanSpeed() == SpeedLevel.HIGH){
             lowBtn.setBackgroundColor(0xFFFFFFFF);
             midBtn.setBackgroundColor(0xFFFFFFFF);
             highBtn.setBackgroundColor(0xFF03A9F4);
+
+            lowBtn.setTextColor(0xFF000000);
+            midBtn.setTextColor(0xFF000000);
+            highBtn.setTextColor(0xFFFFFFFF);
         }
     }
 

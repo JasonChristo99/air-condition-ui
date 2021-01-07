@@ -57,9 +57,15 @@ public class OptionSleepModeActivity extends AppCompatActivity {
         if(ACOptionsUtil.getInstance(this).getSleepMode()==OnOff.ON){
             onBtn.setBackgroundColor(0xFF03A9F4);
             offBtn.setBackgroundColor(0xFFFFFFFF);
+
+            onBtn.setTextColor(0xFFFFFFFF);
+            offBtn.setTextColor(0xFF000000);
         }else{
             onBtn.setBackgroundColor(0xFFFFFFFF);
             offBtn.setBackgroundColor(0xFF03A9F4);
+
+            onBtn.setTextColor(0xFF000000);
+            offBtn.setTextColor(0xFFFFFFFF);
         }
     }
 }
