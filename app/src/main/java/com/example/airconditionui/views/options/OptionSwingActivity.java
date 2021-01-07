@@ -13,6 +13,7 @@ import com.example.airconditionui.utils.ACOptionsUtil;
 
 public class OptionSwingActivity extends AppCompatActivity {
     Button backBtn, btn1, btn2, btn3, btn4, btn5, autoBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,39 +72,44 @@ public class OptionSwingActivity extends AppCompatActivity {
 
     }
 
-    private void btn1Pressed(){
+    private void btn1Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(1);
         updateButtons();
     }
-    private void btn2Pressed(){
+
+    private void btn2Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(2);
         updateButtons();
     }
-    private void btn3Pressed(){
+
+    private void btn3Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(3);
         updateButtons();
     }
-    private void btn4Pressed(){
+
+    private void btn4Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(4);
         updateButtons();
     }
-    private void btn5Pressed(){
+
+    private void btn5Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(5);
         updateButtons();
     }
-    private void autoBtnPressed(){
+
+    private void autoBtnPressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.ON);
         ACOptionsUtil.getInstance(this).setSwingScale(0);
         updateButtons();
     }
 
-    private void updateButtons(){
-        if(ACOptionsUtil.getInstance(this).getSwingAuto() == OnOff.ON){
+    private void updateButtons() {
+        if (ACOptionsUtil.getInstance(this).getSwingAuto() == OnOff.ON) {
             btn1.setBackgroundColor(0xFFFFFFFF);
             btn2.setBackgroundColor(0xFFFFFFFF);
             btn3.setBackgroundColor(0xFFFFFFFF);
@@ -117,7 +123,7 @@ public class OptionSwingActivity extends AppCompatActivity {
             btn4.setTextColor(0xFF000000);
             btn5.setTextColor(0xFF000000);
             autoBtn.setTextColor(0xFFFFFFFF);
-        }else if (ACOptionsUtil.getInstance(this).getSwingScale() == 1){
+        } else if (ACOptionsUtil.getInstance(this).getSwingScale() == 1) {
             btn1.setBackgroundColor(0xFF03A9F4);
             btn2.setBackgroundColor(0xFFFFFFFF);
             btn3.setBackgroundColor(0xFFFFFFFF);
@@ -131,7 +137,7 @@ public class OptionSwingActivity extends AppCompatActivity {
             btn4.setTextColor(0xFF000000);
             btn5.setTextColor(0xFF000000);
             autoBtn.setTextColor(0xFF000000);
-        }else if (ACOptionsUtil.getInstance(this).getSwingScale() == 2){
+        } else if (ACOptionsUtil.getInstance(this).getSwingScale() == 2) {
             btn1.setBackgroundColor(0xFFFFFFFF);
             btn2.setBackgroundColor(0xFF03A9F4);
             btn3.setBackgroundColor(0xFFFFFFFF);
@@ -145,7 +151,7 @@ public class OptionSwingActivity extends AppCompatActivity {
             btn4.setTextColor(0xFF000000);
             btn5.setTextColor(0xFF000000);
             autoBtn.setTextColor(0xFF000000);
-        }else if (ACOptionsUtil.getInstance(this).getSwingScale() == 3){
+        } else if (ACOptionsUtil.getInstance(this).getSwingScale() == 3) {
             btn1.setBackgroundColor(0xFFFFFFFF);
             btn2.setBackgroundColor(0xFFFFFFFF);
             btn3.setBackgroundColor(0xFF03A9F4);
@@ -159,7 +165,7 @@ public class OptionSwingActivity extends AppCompatActivity {
             btn4.setTextColor(0xFF000000);
             btn5.setTextColor(0xFF000000);
             autoBtn.setTextColor(0xFF000000);
-        }else if (ACOptionsUtil.getInstance(this).getSwingScale() == 4){
+        } else if (ACOptionsUtil.getInstance(this).getSwingScale() == 4) {
             btn1.setBackgroundColor(0xFFFFFFFF);
             btn2.setBackgroundColor(0xFFFFFFFF);
             btn3.setBackgroundColor(0xFFFFFFFF);
@@ -173,7 +179,7 @@ public class OptionSwingActivity extends AppCompatActivity {
             btn4.setTextColor(0xFFFFFFFF);
             btn5.setTextColor(0xFF000000);
             autoBtn.setTextColor(0xFF000000);
-        }else if (ACOptionsUtil.getInstance(this).getSwingScale() == 5){
+        } else if (ACOptionsUtil.getInstance(this).getSwingScale() == 5) {
             btn1.setBackgroundColor(0xFFFFFFFF);
             btn2.setBackgroundColor(0xFFFFFFFF);
             btn3.setBackgroundColor(0xFFFFFFFF);

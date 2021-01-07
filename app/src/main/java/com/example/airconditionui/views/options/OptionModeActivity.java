@@ -57,26 +57,29 @@ public class OptionModeActivity extends AppCompatActivity {
     }
 
 
-    public void setCoolModePressed(){
+    public void setCoolModePressed() {
         ACOptionsUtil.getInstance(this).setFunctionalityMode(FunctionalityMode.COOL);
         updateButtons();
     }
-    public void setHeatModePressed(){
+
+    public void setHeatModePressed() {
         ACOptionsUtil.getInstance(this).setFunctionalityMode(FunctionalityMode.HEAT);
         updateButtons();
     }
-    public void setDryModePressed(){
+
+    public void setDryModePressed() {
         ACOptionsUtil.getInstance(this).setFunctionalityMode(FunctionalityMode.DRY);
         updateButtons();
     }
-    public void setFeelModePressed(){
+
+    public void setFeelModePressed() {
         ACOptionsUtil.getInstance(this).setFunctionalityMode(FunctionalityMode.FEEL);
         updateButtons();
     }
 
 
-    public void updateButtons(){
-        if(ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.COOL){
+    public void updateButtons() {
+        if (ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.COOL) {
             coolBtn.setBackgroundColor(0xFF03A9F4);
             heatBtn.setBackgroundColor(0xFFFFFFFF);
             dryBtn.setBackgroundColor(0xFFFFFFFF);
@@ -86,7 +89,7 @@ public class OptionModeActivity extends AppCompatActivity {
             heatBtn.setTextColor(0xFF000000);
             dryBtn.setTextColor(0xFF000000);
             feelBtn.setTextColor(0xFF000000);
-        }else if (ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.HEAT){
+        } else if (ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.HEAT) {
             coolBtn.setBackgroundColor(0xFFFFFFFF);
             heatBtn.setBackgroundColor(0xFF03A9F4);
             dryBtn.setBackgroundColor(0xFFFFFFFF);
@@ -96,7 +99,7 @@ public class OptionModeActivity extends AppCompatActivity {
             heatBtn.setTextColor(0xFFFFFFFF);
             dryBtn.setTextColor(0xFF000000);
             feelBtn.setTextColor(0xFF000000);
-        }else if (ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.DRY){
+        } else if (ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.DRY) {
             coolBtn.setBackgroundColor(0xFFFFFFFF);
             heatBtn.setBackgroundColor(0xFFFFFFFF);
             dryBtn.setBackgroundColor(0xFF03A9F4);
@@ -106,7 +109,7 @@ public class OptionModeActivity extends AppCompatActivity {
             heatBtn.setTextColor(0xFF000000);
             dryBtn.setTextColor(0xFFFFFFFF);
             feelBtn.setTextColor(0xFF000000);
-        }else if (ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.FEEL){
+        } else if (ACOptionsUtil.getInstance(this).getFunctionalityMode() == FunctionalityMode.FEEL) {
             coolBtn.setBackgroundColor(0xFFFFFFFF);
             heatBtn.setBackgroundColor(0xFFFFFFFF);
             dryBtn.setBackgroundColor(0xFFFFFFFF);

@@ -18,8 +18,8 @@ public class OptionTurboMode extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_turbo_mode);
-        onBtn=findViewById(R.id.onBtn);
-        offBtn=findViewById(R.id.offBtn);
+        onBtn = findViewById(R.id.onBtn);
+        offBtn = findViewById(R.id.offBtn);
         backBtn = findViewById(R.id.optBackButton);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,21 +44,22 @@ public class OptionTurboMode extends AppCompatActivity {
         });
     }
 
-    public void setTurboModeOnPressed(){
+    public void setTurboModeOnPressed() {
         ACOptionsUtil.getInstance(this).setTurboMode(OnOff.ON);
     }
-    public void setTurboModeOffPressed(){
+
+    public void setTurboModeOffPressed() {
         ACOptionsUtil.getInstance(this).setTurboMode(OnOff.OFF);
     }
 
-    public void updateButtons(){
-        if(ACOptionsUtil.getInstance(this).getTurboMode()==OnOff.ON){
+    public void updateButtons() {
+        if (ACOptionsUtil.getInstance(this).getTurboMode() == OnOff.ON) {
             onBtn.setBackgroundColor(0xFF03A9F4);
             offBtn.setBackgroundColor(0xFFFFFFFF);
 
             onBtn.setTextColor(0xFFFFFFFF);
             offBtn.setTextColor(0xFF000000);
-        }else{
+        } else {
             onBtn.setBackgroundColor(0xFFFFFFFF);
             offBtn.setBackgroundColor(0xFF03A9F4);
 
