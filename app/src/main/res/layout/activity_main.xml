@@ -21,56 +21,71 @@
         android:id="@+id/temperatureText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="\? Βαθμοί"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
+        android:text="\? C"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainACImage" />
 
+    <TextView
+        android:id="@+id/temperatureText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Βαθμοί"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureText" />
+
     <Button
         android:id="@+id/powerOffBtn"
         style="@style/ShapeAppearance.MaterialComponents.LargeComponent"
-        android:layout_width="224dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="380dp"
+        android:layout_width="276dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/colorOff"
         android:text="ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decreaseTempBtn"
         app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
 
     <Button
         android:id="@+id/moreOptionsBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:text="ΠΕΡΙΣΣΟΤΕΡΕΣ ΛΕΙΤΟΥΡΓΙΕΣ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/powerOffBtn" />
 
-    <Button
+    <ImageButton
         android:id="@+id/increaseTempBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="76dp"
-        android:text="UP"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:background="@drawable/border_green"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add_black_24dp"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureText" />
+        app:layout_constraintTop_toBottomOf="@+id/temperatureText2" />
 
-    <Button
+    <ImageButton
         android:id="@+id/decreaseTempBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="36dp"
-        android:text="DOWN"
+        android:layout_width="102dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border_red"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_remove_black_24dp"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureText" />
+        app:layout_constraintTop_toBottomOf="@+id/temperatureText2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

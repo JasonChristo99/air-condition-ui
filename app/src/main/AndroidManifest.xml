@@ -9,19 +9,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.options.OptionSwingActivity"></activity>
-        <activity android:name=".views.options.OptionTurboMode" />
-        <activity android:name=".views.options.OptionModeActivity" />
-        <activity android:name=".views.options.OptionTimerActivity" />
-        <activity android:name=".views.OptionsActivity" />
-        <activity android:name=".views.AppPreferencesActivity" />
-        <activity android:name=".views.options.OptionEcoModeActivity" />
-        <activity android:name=".views.options.OptionSleepModeActivity" />
-        <activity android:name=".views.options.OptionFanSpeedActivity" />
+        <activity
+            android:name=".views.options.OptionSwingActivity"
+            android:label="@string/option_swing" />
+        <activity
+            android:name=".views.options.OptionTurboMode"
+            android:label="@string/option_turbo" />
+        <activity
+            android:name=".views.options.OptionModeActivity"
+            android:label="@string/option_mode" />
+        <activity
+            android:name=".views.options.OptionTimerActivity"
+            android:label="@string/option_timer" />
+        <activity
+            android:name=".views.OptionsActivity"
+            android:label="@string/options" />
+        <activity
+            android:name=".views.AppPreferencesActivity"
+            android:label="@string/preferences" />
+        <activity
+            android:name=".views.options.OptionEcoModeActivity"
+            android:label="@string/option_eco" />
+        <activity
+            android:name=".views.options.OptionSleepModeActivity"
+            android:label="@string/option_sleep" />
+        <activity
+            android:name=".views.options.OptionFanSpeedActivity"
+            android:label="@string/option_fan" />
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
