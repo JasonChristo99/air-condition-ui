@@ -2,14 +2,17 @@ package com.example.airconditionui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.airconditionui.models.OnOff;
 import com.example.airconditionui.utils.ACOptionsUtil;
 import com.example.airconditionui.views.MainActivity;
+import com.example.airconditionui.views.dialogs.PowerOnDialog;
 
 /* The first activity from where we can start the AC device */
 public class StartActivity extends AppCompatActivity {
@@ -48,8 +51,18 @@ public class StartActivity extends AppCompatActivity {
     private void onPowerOnPressed() {
         // power the device on
         ACOptionsUtil.getInstance(this).setPower(OnOff.ON);
-        // change screen
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        // show dummy progress bar
+        final PowerOnDialog powerOnDialog = new PowerOnDialog(this);
+        powerOnDialog.startDialog();
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                powerOnDialog.dismissDialog();
+                // change screen
+                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        }, 1500); // milliseconds delay
     }
 }

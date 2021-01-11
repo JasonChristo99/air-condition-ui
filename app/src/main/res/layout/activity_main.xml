@@ -42,7 +42,7 @@
         style="@style/ShapeAppearance.MaterialComponents.LargeComponent"
         android:layout_width="276dp"
         android:layout_height="102dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/colorOff"
         android:text="ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
@@ -50,13 +50,14 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/decreaseTempBtn"
+        app:icon="@drawable/ic_power_settings_new_black_24dp"
         app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
 
     <Button
         android:id="@+id/moreOptionsBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="ΠΕΡΙΣΣΟΤΕΡΕΣ ΛΕΙΤΟΥΡΓΙΕΣ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,10 +65,10 @@
 
     <ImageButton
         android:id="@+id/increaseTempBtn"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginEnd="48dp"
         android:background="@drawable/border_green"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_add_black_24dp"
@@ -77,9 +78,9 @@
 
     <ImageButton
         android:id="@+id/decreaseTempBtn"
-        android:layout_width="102dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="68dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/border_red"
         android:scaleType="fitCenter"

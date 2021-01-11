@@ -12,7 +12,7 @@ import com.example.airconditionui.R;
 import com.example.airconditionui.models.ACOptions;
 import com.example.airconditionui.models.OnOff;
 import com.example.airconditionui.utils.ACOptionsUtil;
-
+// TODO a button that erases the timer
 public class OptionTimerActivity extends AppCompatActivity {
     Button OKBtn, backBtn;
     TimePicker picker;

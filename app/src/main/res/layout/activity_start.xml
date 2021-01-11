@@ -6,26 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
+    <TextView
+        android:id="@+id/powerOnText"
+        android:layout_width="358dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/power_on_message"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startACImage" />
+
     <Button
         android:id="@+id/powerOnBtn"
         style="@style/ShapeAppearance.MaterialComponents.LargeComponent"
         android:layout_width="255dp"
         android:layout_height="115dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/colorOn"
-        android:text="ΕΝΕΡΓΟΠΟΙΗΣΗ"
+        android:text="@string/power_on_btn_txt"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startACImage" />
+        app:layout_constraintTop_toBottomOf="@+id/powerOnText" />
 
     <Button
         android:id="@+id/exitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:text="ΕΞΟΔΟΣ"
+        android:layout_marginTop="40dp"
+        android:text="@string/exit_btn_txt"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -34,21 +46,22 @@
 
     <TextView
         android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="Καλώς ορίσατε!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="357dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/welcome_message"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/startACImage"
-        android:layout_width="198dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="221dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText"
