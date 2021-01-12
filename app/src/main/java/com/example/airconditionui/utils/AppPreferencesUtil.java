@@ -5,8 +5,8 @@ package com.example.airconditionui.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
-import com.example.airconditionui.models.ACOptions;
 import com.example.airconditionui.models.AppPreferences;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -25,6 +25,7 @@ public class AppPreferencesUtil {
         Gson gson = new Gson();
 
         if (getAppPreferences() == null) {
+//            Log.e("PREF_UTIL", "INIT");
             editor.putString(APP_PREFERENCES_KEY, gson.toJson(AppPreferences.getDefault()));
             editor.apply();
         }
@@ -54,6 +55,8 @@ public class AppPreferencesUtil {
                 return String.valueOf(appPreferences.getFontSize());
             case VOICE_COMMANDS:
                 return String.valueOf(appPreferences.isVoiceCommands());
+            case TEXT_TO_SPEECH:
+                return String.valueOf(appPreferences.isTextToSpeech());
             // TODO add the remaining cases here
             default:
                 return null;
@@ -69,8 +72,14 @@ public class AppPreferencesUtil {
         return getAppPreferences().isVoiceCommands();
     }
 
-    // Setters
+    public boolean isTextToSpeech() {
+        Log.e("PREF_UTIL", String.valueOf(getAppPreferences().isTextToSpeech()));
+        Log.e("PREF_UTIL", String.valueOf(getAppPreferences()));
+        Log.e("PREF_UTIL", String.valueOf(AppPreferences.getDefault()));
+        return getAppPreferences().isTextToSpeech();
+    }
 
+    // Setters
     public void setFontSize(int value) {
         AppPreferences appPreferences = getAppPreferences();
         appPreferences.setFontSize(value);
@@ -84,6 +93,16 @@ public class AppPreferencesUtil {
     public void setVoiceCommands(boolean value) {
         AppPreferences appPreferences = getAppPreferences();
         appPreferences.setVoiceCommands(value);
+        Gson gson = new Gson();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(APP_PREFERENCES_KEY);
+        editor.putString(APP_PREFERENCES_KEY, gson.toJson(appPreferences));
+        editor.apply();
+    }
+
+    public void setTextToSpeech(boolean value) {
+        AppPreferences appPreferences = getAppPreferences();
+        appPreferences.setTextToSpeech(value);
         Gson gson = new Gson();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove(APP_PREFERENCES_KEY);

@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,19 +23,22 @@ import com.example.airconditionui.R;
 import com.example.airconditionui.StartActivity;
 import com.example.airconditionui.models.OnOff;
 import com.example.airconditionui.utils.ACOptionsUtil;
+import com.example.airconditionui.utils.AppPreferencesUtil;
+import com.example.airconditionui.utils.TextToSpeechUtil;
 import com.example.airconditionui.views.dialogs.PowerOffDialog;
 
 import java.text.DateFormat;
+import java.util.Locale;
 
 /* This is the main activity of the AC UI application
  * from where we can increase/lower the temperature etc. */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     TextView temperatureText;
     ImageButton increaseTempBtn, decreaseTempBtn;
     Button powerOffBtn, moreOptionsBtn;
-
+    TextToSpeech tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tts = new TextToSpeech(this, this);
     }
 
     private void moreOptionsPressed() {
@@ -91,21 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
                         //Yes button clicked
-
-                        // show dummy progress bar
-                        final PowerOffDialog powerOffDialog = new PowerOffDialog(MainActivity.this);
-                        powerOffDialog.startDialog();
-
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            public void run() {
-                                powerOffDialog.dismissDialog();
-                                // change screen
-                                ACOptionsUtil.getInstance(MainActivity.this).setPower(OnOff.OFF);
-                                finish();
-                            }
-                        }, 1500); // milliseconds delay
-
+                        yesButtonClicked();
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
                         //No button clicked
@@ -119,6 +111,21 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton("Όχι", dialogClickListener).show();
 
 
+    }
+
+    private void yesButtonClicked() {
+        // show dummy progress bar/dialog
+        final PowerOffDialog powerOffDialog = new PowerOffDialog(MainActivity.this);
+        powerOffDialog.startDialog();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                powerOffDialog.dismissDialog();
+                // change screen
+                ACOptionsUtil.getInstance(MainActivity.this).setPower(OnOff.OFF);
+                finish();
+            }
+        }, 1500); // milliseconds delay
     }
 
     private void decreaseTempPressed() {
@@ -137,6 +144,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateTemperatureText() {
         temperatureText.setText(ACOptionsUtil.getInstance(this).getTemperature() + "°");
+
+        if (tts != null)
+            ttsSpeak("Η θερμοκρασία βρίσκεται στους " + ACOptionsUtil.getInstance(this).getTemperature() + " βαθμούς κελσίου.", "temperature");
+
     }
 
     @Override
@@ -178,5 +189,44 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+
+    @Override
+    public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+            int result = tts.setLanguage(Locale.forLanguageTag("el"));
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Log.e("TTS_LOG", "Lang not supported");
+            }
+        } else {
+            Log.e("TTS_LOG", "Init failed");
+        }
+        Log.e("TTS_LOG", "Init success");
+
+        ttsSpeak("Η θερμοκρασία βρίσκεται στους " + ACOptionsUtil.getInstance(this).getTemperature() + " βαθμούς κελσίου.", "temperature");
+    }
+
+    void ttsSpeak(String s, String id) {
+        if (AppPreferencesUtil.getInstance(this).isTextToSpeech())
+            tts.speak(s, TextToSpeech.QUEUE_FLUSH, null, id);
+    }
+
+    @Override
+    protected void onPause() {
+        if (tts != null) {
+            tts.stop();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
+
+        super.onDestroy();
     }
 }
