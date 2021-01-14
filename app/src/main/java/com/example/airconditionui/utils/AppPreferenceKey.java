@@ -1,8 +1,6 @@
 package com.example.airconditionui.utils;
 
 public enum AppPreferenceKey {
-    FONT_SIZE,
-    VOICE_COMMANDS,
+    HIDE_MORE_OPTIONS,
     TEXT_TO_SPEECH
-    // TODO maybe add more
 }

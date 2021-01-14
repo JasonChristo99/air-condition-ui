@@ -51,48 +51,32 @@ public class AppPreferencesUtil {
     private String getAppPreferenceByKey(AppPreferenceKey appPreferenceKey) {
         AppPreferences appPreferences = getAppPreferences();
         switch (appPreferenceKey) {
-            case FONT_SIZE:
-                return String.valueOf(appPreferences.getFontSize());
-            case VOICE_COMMANDS:
-                return String.valueOf(appPreferences.isVoiceCommands());
+            case HIDE_MORE_OPTIONS:
+                return String.valueOf(appPreferences.isHideMoreOptions());
             case TEXT_TO_SPEECH:
                 return String.valueOf(appPreferences.isTextToSpeech());
-            // TODO add the remaining cases here
             default:
                 return null;
         }
     }
 
     // Getters
-    public int getFontSize() {
-        return getAppPreferences().getFontSize();
-    }
-
-    public boolean isVoiceCommands() {
-        return getAppPreferences().isVoiceCommands();
+    public boolean isHideMoreOptions() {
+        return getAppPreferences().isHideMoreOptions();
     }
 
     public boolean isTextToSpeech() {
-        Log.e("PREF_UTIL", String.valueOf(getAppPreferences().isTextToSpeech()));
-        Log.e("PREF_UTIL", String.valueOf(getAppPreferences()));
-        Log.e("PREF_UTIL", String.valueOf(AppPreferences.getDefault()));
+//        Log.e("PREF_UTIL", String.valueOf(getAppPreferences().isTextToSpeech()));
+//        Log.e("PREF_UTIL", String.valueOf(getAppPreferences()));
+//        Log.e("PREF_UTIL", String.valueOf(AppPreferences.getDefault()));
         return getAppPreferences().isTextToSpeech();
     }
 
     // Setters
-    public void setFontSize(int value) {
-        AppPreferences appPreferences = getAppPreferences();
-        appPreferences.setFontSize(value);
-        Gson gson = new Gson();
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.remove(APP_PREFERENCES_KEY);
-        editor.putString(APP_PREFERENCES_KEY, gson.toJson(appPreferences));
-        editor.apply();
-    }
 
-    public void setVoiceCommands(boolean value) {
+    public void setHideMoreOptions(boolean value) {
         AppPreferences appPreferences = getAppPreferences();
-        appPreferences.setVoiceCommands(value);
+        appPreferences.setHideMoreOptions(value);
         Gson gson = new Gson();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove(APP_PREFERENCES_KEY);

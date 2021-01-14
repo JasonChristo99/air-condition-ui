@@ -15,7 +15,6 @@ import android.widget.Button;
 import com.example.airconditionui.models.OnOff;
 import com.example.airconditionui.utils.ACOptionsUtil;
 import com.example.airconditionui.utils.AppPreferencesUtil;
-import com.example.airconditionui.utils.TextToSpeechUtil;
 import com.example.airconditionui.views.MainActivity;
 import com.example.airconditionui.views.dialogs.PowerOnDialog;
 
@@ -90,32 +89,8 @@ public class StartActivity extends AppCompatActivity implements TextToSpeech.OnI
         }
         Log.e("TTS_LOG", "Init success");
 
-        ttsSpeak(getResources().getString(R.string.welcome_message), "welcome_message");
+        ttsSpeak(getResources().getString(R.string.welcome_and_power_on_message), "welcome_message");
 
-        tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
-            @Override
-            public void onStart(String utteranceId) {
-            }
-
-            @Override
-            public void onDone(String utteranceId) {
-                switch (utteranceId) {
-                    case "welcome_message":
-                        Log.e("TTS_LOG", "END OF welcome_message");
-                        ttsSpeak(getResources().getString(R.string.power_on_message), "power_on_message");
-                        break;
-                    case "power_on_message":
-                        Log.e("TTS_LOG", "END OF power_on_message");
-                        tts.stop();
-                        tts.shutdown();
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(String utteranceId) {
-            }
-        });
     }
 
 

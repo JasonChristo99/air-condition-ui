@@ -2,22 +2,18 @@ package com.example.airconditionui.models;
 
 /* App Preferences model class */
 
-// TODO maybe add more preferences here
 public class AppPreferences {
-    private int fontSize;
-    private boolean voiceCommands;
+    private boolean hideMoreOptions;
     private boolean textToSpeech;
 
-    public AppPreferences(int fontSize, boolean voiceCommands, boolean textToSpeech) {
-        this.fontSize = fontSize;
-        this.voiceCommands = voiceCommands;
+    public AppPreferences(boolean hideMoreOptions, boolean textToSpeech) {
+        this.hideMoreOptions = hideMoreOptions;
         this.textToSpeech = textToSpeech;
     }
 
     // init all preferences with default values
     private AppPreferences() {
-        this.fontSize = 20;
-        this.voiceCommands = false;
+        this.hideMoreOptions = false;
         this.textToSpeech = true;
     }
 
@@ -25,20 +21,13 @@ public class AppPreferences {
         return new AppPreferences();
     }
 
-    public int getFontSize() {
-        return fontSize;
+
+    public boolean isHideMoreOptions() {
+        return hideMoreOptions;
     }
 
-    public void setFontSize(int fontSize) {
-        this.fontSize = fontSize;
-    }
-
-    public boolean isVoiceCommands() {
-        return voiceCommands;
-    }
-
-    public void setVoiceCommands(boolean voiceCommands) {
-        this.voiceCommands = voiceCommands;
+    public void setHideMoreOptions(boolean hideMoreOptions) {
+        this.hideMoreOptions = hideMoreOptions;
     }
 
     public boolean isTextToSpeech() {
@@ -52,8 +41,7 @@ public class AppPreferences {
     @Override
     public String toString() {
         return "AppPreferences{" +
-                "fontSize=" + fontSize +
-                ", voiceCommands=" + voiceCommands +
+                ", voiceCommands=" + hideMoreOptions +
                 ", textToSpeech=" + textToSpeech +
                 '}';
     }

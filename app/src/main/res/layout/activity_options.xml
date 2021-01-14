@@ -10,7 +10,7 @@
         android:id="@+id/optACImage"
         android:layout_width="149dp"
         android:layout_height="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,11 +20,35 @@
         android:id="@+id/optionsRecView"
         android:layout_width="match_parent"
         android:layout_height="430dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:translationZ="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/optACImage" />
+
+    <ImageView
+        android:id="@+id/recyclerUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="#707070"
+        app:layout_constraintBottom_toTopOf="@+id/optionsRecView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+    <ImageView
+        android:id="@+id/recyclerDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="#707070"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionsRecView"
+        app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
 
     <Button
         android:id="@+id/optBackButton"
@@ -38,4 +62,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/optionsRecView"
         app:layout_constraintVertical_bias="0.451" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

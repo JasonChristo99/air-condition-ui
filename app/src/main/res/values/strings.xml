@@ -15,6 +15,7 @@
     <string name="back">ΠΗΓΑΙΝΕ ΠΙΣΩ</string>
     <string name="welcome_message">Καλώς ορίσατε στο τηλεχειριστήριο του κλιματιστικού UNITED!</string>
     <string name="power_on_message">Για να ενεργοποιήσετε το κλιματιστικό, αγγίξτε το παρακάτω πράσινο κουμπί.</string>
+    <string name="welcome_and_power_on_message">Καλώς ορίσατε στο τηλεχειριστήριο του κλιματιστικού ΓΙΟΥΝΆΙΤΙΝΤ! Για να ενεργοποιήσετε το κλιματιστικό, αγγίξτε το παρακάτω πράσινο κουμπί.</string>
     <string name="power_on_dialog_message">Το κλιματιστικό ενεργοποιείται…</string>
     <string name="power_off_dialog_message">Το κλιματιστικό απενεργοποιείται…</string>
     <string name="preferences_menu">Ρυθμίσεις εφαρμογής</string>
@@ -44,4 +45,5 @@ Kλιματιστικό τύπου SPLIT 9000BTU INVERTER με συμπιεστ�
     <string name="power_on_btn_txt">ΕΝΕΡΓΟΠΟΙΗΣΗ</string>
     <string name="exit_btn_txt">ΕΞΟΔΟΣ</string>
     <string name="pref_tts">Εκφώνηση λειτουργιών</string>
+    <string name="pref_hide_more">Απόκρυψη κουμπιού \"Περισσότερες επιλογές\"</string>
 </resources>

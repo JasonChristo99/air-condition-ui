@@ -9,5 +9,5 @@
         android:id="@+id/deviceInfoMenu"
         android:icon="@drawable/ic_info_outline_black_24dp"
         android:title="@string/device_info_menu"
-        app:showAsAction="ifRoom|withText" />
+         />
 </menu>
