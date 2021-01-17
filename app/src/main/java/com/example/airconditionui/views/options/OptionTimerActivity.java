@@ -9,12 +9,11 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.airconditionui.R;
-import com.example.airconditionui.models.ACOptions;
 import com.example.airconditionui.models.OnOff;
 import com.example.airconditionui.utils.ACOptionsUtil;
-// TODO a button that erases the timer
+
 public class OptionTimerActivity extends AppCompatActivity {
-    Button OKBtn, backBtn;
+    Button OKBtn, backBtn, resetBtn;
     TimePicker picker;
     int hour, minute;
     TextView setTimerText;
@@ -28,6 +27,7 @@ public class OptionTimerActivity extends AppCompatActivity {
         picker.setIs24HourView(true);
         OKBtn = findViewById(R.id.OKBtn);
         backBtn = findViewById(R.id.optBackButton);
+        resetBtn = findViewById(R.id.resetTimer);
         if (ACOptionsUtil.getInstance(this).getTimer().equals(OnOff.ON)) {
             hour = ACOptionsUtil.getInstance(this).getTimerMin() / 60;
             minute = ACOptionsUtil.getInstance(this).getTimerMin() % 60;
@@ -45,8 +45,17 @@ public class OptionTimerActivity extends AppCompatActivity {
                 hour = picker.getHour();
                 minute = picker.getMinute();
                 updateTimerText();
-                int totalminutes = hour * 60 + minute;
-                setTimerMinutes(totalminutes);
+                int totalMinutes = hour * 60 + minute;
+                setTimerMinutes(totalMinutes);
+            }
+        });
+        resetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hour = 0;
+                minute = 0;
+                setTimerMinutes(0);
+                updateTimerText();
             }
         });
 
@@ -81,19 +90,16 @@ public class OptionTimerActivity extends AppCompatActivity {
         }
     }
 
-    private void setTimerMinutes(int totalminutes) {
-        ACOptionsUtil.getInstance(this).setTimerMin(totalminutes);
-        if (totalminutes == 0) {
+    private void setTimerMinutes(int totalMinutes) {
+        ACOptionsUtil.getInstance(this).setTimerMin(totalMinutes);
+        if (totalMinutes == 0) {
             ACOptionsUtil.getInstance(this).setTimer(OnOff.OFF);
         } else {
             ACOptionsUtil.getInstance(this).setTimer(OnOff.ON);
         }
 
-        System.out.println(ACOptionsUtil.getInstance(this).getTimerMin());
-        System.out.println(ACOptionsUtil.getInstance(this).getTimerMin());
-
-        System.out.println(ACOptionsUtil.getInstance(this).getTimer());
-        System.out.println(ACOptionsUtil.getInstance(this).getTimer());
+//        System.out.println(ACOptionsUtil.getInstance(this).getTimerMin());
+//        System.out.println(ACOptionsUtil.getInstance(this).getTimer());
 
 
     }

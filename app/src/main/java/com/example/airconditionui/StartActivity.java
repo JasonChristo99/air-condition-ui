@@ -1,8 +1,10 @@
 package com.example.airconditionui;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -54,9 +56,26 @@ public class StartActivity extends AppCompatActivity implements TextToSpeech.OnI
 
 
     private void onExitPressed() {
-        // TODO message "Are you sure you want to exit?"
-        onDestroy();
-        System.exit(0);
+
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        //Yes button clicked
+                        onDestroy();
+                        System.exit(0);
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        //No button clicked
+                        break;
+                }
+            }
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Είστε σίγουροι ότι θέλετε να τερματίσετε την εφαρμογή;").setPositiveButton("Ναι", dialogClickListener)
+                .setNegativeButton("Όχι", dialogClickListener).show();
     }
 
     private void onPowerOnPressed() {
