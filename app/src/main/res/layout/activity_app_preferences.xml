@@ -6,10 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".views.AppPreferencesActivity">
 
+    <Button
+        android:id="@+id/resetDefault"
+        android:layout_width="261dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="20dp"
+
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="ΕΠΑΝΑΦΟΡΑ ΑΡΧΙΚΩΝ ΡΥΘΜΙΣΕΩΝ"
+        app:icon="@drawable/ic_settings_backup_restore_black_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/prefBackButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prefHideMore"
+        app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
+
     <TextView
         android:id="@+id/prefHideMore"
         android:layout_width="245dp"
-        android:layout_height="49dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="44dp"
         android:text="@string/pref_hide_more"

@@ -33,6 +33,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EcoModeText"
+        app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.LargeComponent"
         app:strokeWidth="3dp" />
 
     <Button

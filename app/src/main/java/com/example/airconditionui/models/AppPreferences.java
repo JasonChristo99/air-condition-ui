@@ -41,7 +41,7 @@ public class AppPreferences {
     @Override
     public String toString() {
         return "AppPreferences{" +
-                ", voiceCommands=" + hideMoreOptions +
+                "hideMoreOptions=" + hideMoreOptions +
                 ", textToSpeech=" + textToSpeech +
                 '}';
     }

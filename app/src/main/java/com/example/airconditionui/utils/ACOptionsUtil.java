@@ -249,5 +249,15 @@ public class ACOptionsUtil {
         setNumericACOptionByKey(ACOptionKey.SWING_SCALE, value);
     }
 
+    public void resetDefaultPreferences() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+
+        editor.putString(AC_OPTIONS_KEY, gson.toJson(ACOptions.getDefault()));
+        editor.apply();
+
+        Log.e("OPT_RESET", String.valueOf(getACOptions()));
+    }
+
 }
 

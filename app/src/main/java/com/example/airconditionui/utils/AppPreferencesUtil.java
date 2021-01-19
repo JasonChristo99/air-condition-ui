@@ -94,4 +94,13 @@ public class AppPreferencesUtil {
         editor.apply();
     }
 
+    public void resetDefaultPreferences() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+
+        editor.putString(APP_PREFERENCES_KEY, gson.toJson(AppPreferences.getDefault()));
+        editor.apply();
+
+        Log.e("PREF_RESET", String.valueOf(getAppPreferences()));
+    }
 }
