@@ -35,6 +35,7 @@ public class AppPreferencesActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 AppPreferencesUtil.getInstance(AppPreferencesActivity.this).setTextToSpeech(isChecked);
+                Toast.makeText(AppPreferencesActivity.this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -44,6 +45,7 @@ public class AppPreferencesActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 AppPreferencesUtil.getInstance(AppPreferencesActivity.this).setHideMoreOptions(isChecked);
+                Toast.makeText(AppPreferencesActivity.this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
             }
         });
 
