@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.airconditionui.R;
 import com.example.airconditionui.models.OnOff;
@@ -52,14 +53,19 @@ public class OptionTimerActivity extends AppCompatActivity {
         resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hour = 0;
-                minute = 0;
-                setTimerMinutes(0);
-                updateTimerText();
+                onResetPressed();
             }
         });
 
 
+    }
+
+    private void onResetPressed() {
+        hour = 0;
+        minute = 0;
+        setTimerMinutes(0);
+        updateTimerText();
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     private void updateTimerText() {
@@ -97,6 +103,7 @@ public class OptionTimerActivity extends AppCompatActivity {
         } else {
             ACOptionsUtil.getInstance(this).setTimer(OnOff.ON);
         }
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
 
 //        System.out.println(ACOptionsUtil.getInstance(this).getTimerMin());
 //        System.out.println(ACOptionsUtil.getInstance(this).getTimer());

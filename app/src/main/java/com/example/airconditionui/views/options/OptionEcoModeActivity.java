@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.airconditionui.R;
 import com.example.airconditionui.models.OnOff;
@@ -48,10 +49,12 @@ public class OptionEcoModeActivity extends AppCompatActivity {
 
     public void setEcoModeOnPressed() {
         ACOptionsUtil.getInstance(this).setEcoMode(OnOff.ON);
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     public void setEcoModeOffPressed() {
         ACOptionsUtil.getInstance(this).setEcoMode(OnOff.OFF);
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     public void updateButtons() {

@@ -46,4 +46,5 @@ Kλιματιστικό τύπου SPLIT 9000BTU INVERTER με συμπιεστ�
     <string name="exit_btn_txt">ΕΞΟΔΟΣ</string>
     <string name="pref_tts">Εκφώνηση λειτουργιών</string>
     <string name="pref_hide_more">Απόκρυψη κουμπιού \"Περισσότερες επιλογές\"</string>
+    <string name="saved_changes_toast">Οι αλλαγές αποθηκεύτηκαν</string>
 </resources>

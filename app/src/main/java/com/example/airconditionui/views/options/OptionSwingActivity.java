@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.airconditionui.R;
 
@@ -68,44 +69,48 @@ public class OptionSwingActivity extends AppCompatActivity {
                 autoBtnPressed();
             }
         });
-
-
     }
 
     private void btn1Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(1);
         updateButtons();
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     private void btn2Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(2);
         updateButtons();
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     private void btn3Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(3);
         updateButtons();
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     private void btn4Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(4);
         updateButtons();
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     private void btn5Pressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.OFF);
         ACOptionsUtil.getInstance(this).setSwingScale(5);
         updateButtons();
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     private void autoBtnPressed() {
         ACOptionsUtil.getInstance(this).setSwingAuto(OnOff.ON);
         ACOptionsUtil.getInstance(this).setSwingScale(0);
         updateButtons();
+        Toast.makeText(this, getResources().getString(R.string.saved_changes_toast), Toast.LENGTH_SHORT).show();
     }
 
     private void updateButtons() {
